@@ -996,7 +996,7 @@ OGRLayerH godalCreateLayer(cctx *ctx, GDALDatasetH ds, char *name, OGRSpatialRef
 
 OGRLayerH godalCopyLayer(cctx *ctx, GDALDatasetH ds, OGRLayerH layer, char *name) {
 	godalWrap(ctx);
-	OGRLayerH ret = OGR_DS_CopyLayer(ds,layer, name,nullptr);
+	OGRLayerH ret = GDALDatasetCopyLayer(ds,layer, name,nullptr);
 	if(ret==nullptr) {
 		forceError(ctx);
 	}
